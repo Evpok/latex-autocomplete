@@ -2,7 +2,7 @@
   "name": "latex-autocomplete",
   "main": "./lib/latexautocomplete.js",
   "version": "0.1.2",
-  "description": "An environment closing autocomplete that tries to do its best",
+  "description": "An environment-closing autocompleter that tries to do its best",
   "keywords": [
     "LaTeX",
     "autocompletion"

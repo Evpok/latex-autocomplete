@@ -3,6 +3,7 @@ npm-debug.log
 node_modules
 *.aux
 *.fdb_latexmk
-*.log.pdf
+*.log
+*.pdf
 *.synctex.gz
 *.fls

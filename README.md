@@ -2,4 +2,4 @@
 
 LaTeX environment autocompletion for [atom](http://atom.io).
 
-![Screenshot](doc/shot.gif)
+![Screenshot](https://cdn.rawgit.com/Evpok/latex-autocomplete/master/doc/shot.gif)

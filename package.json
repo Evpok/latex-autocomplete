@@ -7,7 +7,7 @@
     "LaTeX",
     "autocompletion"
   ],
-  "activationHooks": [
+  "activationHooksa": [
     "language-latex:grammar-used"
   ],
   "repository": "https://github.com/evpok/latex-autocomplete",

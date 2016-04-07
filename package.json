@@ -7,9 +7,6 @@
     "LaTeX",
     "autocompletion"
   ],
-  "activationHooksa": [
-    "language-latex:grammar-used"
-  ],
   "repository": "https://github.com/evpok/latex-autocomplete",
   "license": "WTFPL",
   "engines": {

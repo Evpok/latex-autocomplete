@@ -1,6 +1,7 @@
-latexautocomplete = require('../lib/latexautocomplete.js')
-libcloser = require('../lib/libcloser')
-path = require('path')
+"use strict"
+const latexautocomplete = require('../lib/latexautocomplete.js')
+const libcloser = require('../lib/libcloser')
+const path = require('path')
 
 describe("latex autocomplete", () => {
     describe("activation, hooking and deactivation", () => {
@@ -16,7 +17,7 @@ describe("latex autocomplete", () => {
                 atom.packages.activatePackage('language-latex')
                 .then(() => {
                    atom.packages.activatePackage('latex-autocomplete')
-                    test_file = path.join('test.tex')
+                    const test_file = path.join('test.tex')
                     return atom.workspace.open(test_file)
                 })
                 .then((e) => {
@@ -59,7 +60,7 @@ is this one? \end{spam}
 
 const sample_line = String.raw`\begin{hello}\end{hello}\begin{spam}\begin{ham}`
         it("correctly detects which environments are to be closed", () =>{
-            envs = libcloser.to_close(sample_line, sample_before, sample_after)
+            const envs = libcloser.to_close(sample_line, sample_before, sample_after)
             expect(envs).toEqual(['ham', 'spam'])
         })
 

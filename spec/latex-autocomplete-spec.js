@@ -1,6 +1,6 @@
 "use strict"
 const latexautocomplete = require('../lib/latexautocomplete.js')
-const libcloser = require('../lib/libcloser')
+const libcloser = require('../lib/libenvcloser')
 const path = require('path')
 
 describe("latex autocomplete", () => {

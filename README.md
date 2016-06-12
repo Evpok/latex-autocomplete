@@ -15,4 +15,4 @@ Development happens at https://github.com/Evpok/latex-autocomplete.
     - Currently only for `\label`s
 
 ## License
-WTFPL. See [LICENCE.md](https://cdn.rawgit.com/Evpok/latex-autocomplete/master/LICENCE.md)
+WTFPL. See [LICENSE.md](https://cdn.rawgit.com/Evpok/latex-autocomplete/master/LICENSE.md)

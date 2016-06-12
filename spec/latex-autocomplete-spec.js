@@ -1,6 +1,7 @@
 "use strict"
 const latexautocomplete = require('../lib/latexautocomplete.js')
 const libenvcloser = require('../lib/libenvcloser')
+const labelcompleter = require('../lib/label_completer.js')
 const path = require('path')
 
 describe("latex autocomplete", () => {
@@ -65,6 +66,14 @@ describe("latex autocomplete", () => {
             const sample_after = String.raw`Some text and a closer \end{ham}`
             const envs = libenvcloser.to_close(sample_line, sample_before, sample_after)
             expect(envs).toEqual(['ham'])
+        })
+    })
+
+    describe('autocompleting labels', () => {
+        it('detects labels', () => {
+            const l = String.raw`\begin{equation}\label{Z/2Z}1+1=4\end{equation}`
+            const labels = labelcompleter.find_labels(l)
+            expect(labels).toEqual(['Z/2Z'])
         })
     })
 })

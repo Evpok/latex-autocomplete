@@ -1,3 +1,8 @@
+## 0.5.0
+* Add autocompletion provider for labels using `autocomplete-plus`](https://atom.io/packages/autocomplete-plus)
+* Add settings to selectively enable features
+* Several fixes and cosmetics
+
 ## 0.4.3
 * Now properly destroys itself on activation/deactivation and destroy completers on closed editors and editors whose grammar is no longer LaTeX.
 

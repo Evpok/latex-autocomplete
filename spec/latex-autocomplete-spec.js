@@ -1,6 +1,6 @@
 "use strict"
 const latexautocomplete = require('../lib/latexautocomplete.js')
-const libcloser = require('../lib/libenvcloser')
+const libenvcloser = require('../lib/libenvcloser')
 const path = require('path')
 
 describe("latex autocomplete", () => {
@@ -40,29 +40,31 @@ describe("latex autocomplete", () => {
         })
     })
 
-    describe('works as expected', () => {
-const sample_before =
-String.raw`This is some \LaTeX code
-\begin{emphasize}
-That may contain
-\begin{emphasize}
-To find unbalanced blocs
-\end{emphasize}
-Some nesting \begin{spam}`
+    describe('completing environments', () => {
 
-const sample_after = String.raw`This is some \LaTeX code
-That I will parse
-\begin{emphasize}
-To find unbalanced blocs
-\end{emphasize}
-is this one? \end{spam}
-\end{emphasize}`
-
-const sample_line = String.raw`\begin{hello}\end{hello}\begin{spam}\begin{ham}`
-        it("correctly detects which environments are to be closed", () =>{
-            const envs = libcloser.to_close(sample_line, sample_before, sample_after)
+        it('detects beginners in a single line', () => {
+            const single_line = String.raw`\begin{spam}`
+            expect(libenvcloser.has_beginners(single_line)).toBeTruthy()
+        })
+        it('detects which environments should be closed in that line', () => {
+            const sample_line = String.raw`\begin{hello}\end{hello}\begin{spam}\begin{ham}`
+            const envs = libenvcloser.to_close(sample_line, '', '')
             expect(envs).toEqual(['ham', 'spam'])
         })
 
+        it("doesn't close environments that are already closed", () =>{
+            const sample_line = String.raw`\begin{ham}`
+            const sample_after = String.raw`Some text and a closer \end{ham}`
+            const envs = libenvcloser.to_close(sample_line, '', sample_after)
+            expect(envs).toEqual([])
+        })
+
+        it("closes enviroments followed by unmatching \end's", () => {
+            const sample_before = String.raw`A beginning \begin{ham} and some text`
+            const sample_line = String.raw`\begin{ham}`
+            const sample_after = String.raw`Some text and a closer \end{ham}`
+            const envs = libenvcloser.to_close(sample_line, sample_before, sample_after)
+            expect(envs).toEqual(['ham'])
+        })
     })
 })

@@ -1,4 +1,4 @@
-SetKeyDelay, 10
+SetKeyDelay, 40
 
 #p::Pause
 
@@ -8,7 +8,7 @@ SetKeyDelay, 10
     Send, {Enter}{Enter}
     SendRaw,
     (
-I will add environments  to this.
+I will add environments to this.
 
 \begin{em}
     )
@@ -39,7 +39,7 @@ I will add environments  to this.
     Send, {Space}{BS}
     SendRaw, \ref{
     Sleep, 1000.
-    Send, {Tab}{End}
+    Send, {Tab}{}}{End}
     Sleep, 1000
     Send, {Enter}{Enter}
 

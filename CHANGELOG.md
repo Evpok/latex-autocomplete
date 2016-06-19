@@ -1,3 +1,10 @@
+## 0.5.2 (2016-06-19)
+* Added label autocompletion support for more referencing commands (currently `\ref`, `\cref`, `\Cref`, `\cpageref`, `\Cpageref`, `\autoref`, `\thref`, `\vref`, `\vpageref`, `\eqref`, `\refeq`, `\prettyref`, `\fref`, `\Fref`, `\tref`, `\pref`, `\zref`).
+* Otherwise improved label autocompletion.
+
+## 0.5.1
+* Various cosmetics
+
 ## 0.5.0
 * Add autocompletion provider for labels using `autocomplete-plus`](https://atom.io/packages/autocomplete-plus)
 * Add settings to selectively enable features

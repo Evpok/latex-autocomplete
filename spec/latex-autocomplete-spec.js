@@ -47,6 +47,7 @@ describe("latex autocomplete", () => {
             const single_line = String.raw`\begin{spam}`
             expect(libenvcloser.has_beginners(single_line)).toBeTruthy()
         })
+
         it('detects which environments should be closed in that line', () => {
             const sample_line = String.raw`\begin{hello}\end{hello}\begin{spam}\begin{ham}`
             const envs = libenvcloser.to_close(sample_line, '', '')
@@ -58,6 +59,13 @@ describe("latex autocomplete", () => {
             const sample_after = String.raw`Some text and a closer \end{ham}`
             const envs = libenvcloser.to_close(sample_line, '', sample_after)
             expect(envs).toEqual([])
+        })
+
+        it("close environments that are only closed in a comment", () =>{
+            const sample_line = String.raw`\begin{ham}`
+            const sample_after = String.raw`Some text and a comment %\end{ham}`
+            const envs = libenvcloser.to_close(sample_line, '', sample_after)
+            expect(envs).toEqual(['ham'])
         })
 
         it("closes enviroments followed by unmatching \end's", () => {

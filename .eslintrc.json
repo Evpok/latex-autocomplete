@@ -12,8 +12,8 @@
      "guard-for-in": "warn",
      "no-else-return": "warn",
      "comma-style": ["error", "last"],
-     "comma-spacing": ["error", { "before": false, "after": true }],
-     "brace-style": "error",
-     "no-var": "error"
+     "comma-spacing": ["error", {"before": false, "after": true}],
+     "no-var": "error",
+     "no-unused-vars": ["warn", {"args": "none"}]
   }
 }

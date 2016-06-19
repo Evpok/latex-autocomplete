@@ -1,7 +1,8 @@
 "use strict"
+
 const latexautocomplete = require('../lib/latexautocomplete.js')
-const libenvcloser = require('../lib/libenvcloser')
-const labelcompleter = require('../lib/label_completer.js')
+const libenvcloser = require('../lib/environment_autocompletion/libenvcloser.js')
+const labelcompleter = require('../lib/label_autocompletion/label_completer.js')
 const path = require('path')
 
 describe("latex autocomplete", () => {

@@ -1,0 +1,11 @@
+{
+    "env": {
+        "jasmine": true
+    },
+    "globals": {
+        "atom": true
+    },
+    "rules": {
+        "no-console": "off"
+    }
+}

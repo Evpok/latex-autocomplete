@@ -42,7 +42,6 @@ describe("latex autocomplete", () => {
     })
 
     describe('completing environments', () => {
-
         it('detects beginners in a single line', () => {
             const single_line = String.raw`\begin{spam}`
             expect(libenvcloser.has_beginners(single_line)).toBeTruthy()
@@ -72,7 +71,7 @@ describe("latex autocomplete", () => {
     describe('autocompleting labels', () => {
         it('detects labels', () => {
             const l = String.raw`\begin{equation}\label{Z/2Z}1+1=4\end{equation}`
-            const labels = labelcompleter.find_labels(l)
+            const labels = labelcompleter.find_labels(l, '')
             expect(labels).toEqual(['Z/2Z'])
         })
     })

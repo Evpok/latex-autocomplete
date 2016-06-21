@@ -1,3 +1,7 @@
+## 0.5.3 (2016-06-21)
+* Fix environment completion with non-UNIX EOLs
+* Fix label completion not working for more than one reference per line
+
 ## 0.5.2 (2016-06-19)
 * Added label autocompletion support for more referencing commands (currently `\ref`, `\cref`, `\Cref`, `\cpageref`, `\Cpageref`, `\autoref`, `\thref`, `\vref`, `\vpageref`, `\eqref`, `\refeq`, `\prettyref`, `\fref`, `\Fref`, `\tref`, `\pref`, `\zref`).
 * Otherwise improved label autocompletion.

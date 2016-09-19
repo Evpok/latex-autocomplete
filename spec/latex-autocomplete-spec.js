@@ -108,17 +108,17 @@ describe("latex autocomplete", () => {
             it('generates snippets for macros with no argument', () => {
                 const desc = ['\\spam', []]
                 const snippet = macrocompleter.snippet_from_macro_desc(desc)
-                expect(snippet).toEqual('\\spam')
+                expect(snippet).toEqual('\\\\spam')
             })
             it('generates snippets for macros with mandaory arguments', () => {
                 const desc = ['\\spam', [[false, undefined], [false, undefined]]]
                 const snippet = macrocompleter.snippet_from_macro_desc(desc)
-                expect(snippet).toEqual(`\\spam{\${0:#1}}{\${1:#2}}`)
+                expect(snippet).toEqual(`\\\\spam{\${1:#1}}{\${2:#2}}`)
             })
             it('generates snippets for macros with an optional argument', () => {
                 const desc = ['\\spam', [[true, 'Camelot'], [false, undefined]]]
                 const snippet = macrocompleter.snippet_from_macro_desc(desc)
-                expect(snippet).toEqual(`\\spam[\${0:#1 (default: 'Camelot')}]{\${1:#2}}`)
+                expect(snippet).toEqual(`\\\\spam[\${1:#1 (default: 'Camelot')}]{\${2:#2}}`)
             })
         })
     })

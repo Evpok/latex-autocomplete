@@ -18,7 +18,7 @@
   "providedServices": {
     "autocomplete.provider": {
       "versions": {
-        "2.0.0": "get_label_completer_provider"
+        "2.0.0": "get_autocomplete_providers"
       }
     }
   }

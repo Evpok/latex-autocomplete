@@ -1,6 +1,7 @@
 {
     "env": {
-        "jasmine": true
+        "jasmine": true,
+        "atomtest": true
     },
     "globals": {
         "atom": true

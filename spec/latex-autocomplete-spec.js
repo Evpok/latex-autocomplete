@@ -3,6 +3,7 @@
 const latexautocomplete = require('../lib/latexautocomplete.js')
 const libenvcloser = require('../lib/environment_autocompletion/libenvcloser.js')
 const labelcompleter = require('../lib/label_autocompletion/label_completer.js')
+const macrocompleter = require('../lib/macros_autocompletion/macro_completer.js')
 const path = require('path')
 
 describe("latex autocomplete", () => {
@@ -82,6 +83,43 @@ describe("latex autocomplete", () => {
             const l = String.raw`\begin{equation}\label{Z/2Z}1+1=4\end{equation}`
             const labels = labelcompleter.find_labels(l, '')
             expect(labels).toEqual(['Z/2Z'])
+        })
+    })
+
+    describe('autocompleting macros', () => {
+        describe('macro definition detections', () => {
+            it('detects macro with no argument', () => {
+                const l = String.raw`Spam spam spam \newcommand{\spam}{sausages} eggs eggs eggs`
+                const macros = macrocompleter.find_macros(l, '')
+                expect(macros).toEqual([['\\spam', []]])
+            })
+            it('detects macros with mandatory arguments', () => {
+                const l = String.raw`Spam spam spam \newcommand{\spam}[2]{#1 sausages #2} eggs eggs eggs`
+                const macros = macrocompleter.find_macros(l, '')
+                expect(macros).toEqual([['\\spam', [[false, undefined], [false, undefined]]]])
+            })
+            it('detects macros with an optional argument', () => {
+                const l = String.raw`Spam spam spam \newcommand{\spam}[2][Camelot]{#1 sausages #2} eggs eggs eggs`
+                const macros = macrocompleter.find_macros(l, '')
+                expect(macros).toEqual([['\\spam', [[true, 'Camelot'], [false, undefined]]]])
+            })
+        })
+        describe('snippet generation', () => {
+            it('generates snippets for macros with no argument', () => {
+                const desc = ['\\spam', []]
+                const snippet = macrocompleter.snippet_from_macro_desc(desc)
+                expect(snippet).toEqual('\\spam')
+            })
+            it('generates snippets for macros with mandaory arguments', () => {
+                const desc = ['\\spam', [[false, undefined], [false, undefined]]]
+                const snippet = macrocompleter.snippet_from_macro_desc(desc)
+                expect(snippet).toEqual(`\\spam{\${0:#1}}{\${1:#2}}`)
+            })
+            it('generates snippets for macros with an optional argument', () => {
+                const desc = ['\\spam', [[true, 'Camelot'], [false, undefined]]]
+                const snippet = macrocompleter.snippet_from_macro_desc(desc)
+                expect(snippet).toEqual(`\\spam[\${0:#1 (default: 'Camelot')}]{\${1:#2}}`)
+            })
         })
     })
 })

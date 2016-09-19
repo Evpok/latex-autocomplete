@@ -1,3 +1,6 @@
+## 0.6.0 (2016-09-19)
+  - Add autocompletion for user-defined macros. Only support `\newcommand` and `\newcommand*`. Support for `xparse` to be added later.
+
 ## 0.5.3 (2016-06-21)
 * Fix environment completion with non-UNIX EOLs
 * Fix label completion not working for more than one reference per line

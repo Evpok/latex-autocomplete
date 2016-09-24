@@ -1,0 +1,38 @@
+xparse_command_declaration ::= <declaration_command> <command_name> "{" <xparse_arg_spec> "}" "{" <LaTeX_code> "}"
+
+declaration_command = "\\DeclareDocumentCommand" | "\\NewDocumentCommand" | "\\RenewDocumentCommand" | "\\ProvideDocumentCommand"
+
+command_name ::= "\\" /[a-Z]+/
+
+LaTeX_code ::= <LaTeX_code> <LaTeX_code> | "{" <LaTeX_code> "}" | <LaTeX_comment> | <macro_call> | <escaped_token> | <parbreak> | /[^\{}]
+LaTeX_comment := "%" /[^\n]*\n/
+macro_call ::= "\\" /[a-Z]+/
+escaped_token ::= "\\" /[^\\]/
+parbreak ::= "\\\\"
+
+
+xparse_arg_spec ::= {/\s*/ <xparse_arg> /\s*/}
+
+xparse_arg ::= {<xparse_arg_processor>} ["+" /\s*/] (<xparse_mandatory_arg> | <xparse_optional_arg>)
+
+xparse_arg_processor ::= ">" /\s*/ "{" <LaTeX_code> "}"
+
+xparse_mandatory_arg ::= <xparse_arg_m> |<xparse_arg_l> | <xparse_arg_r> | <xparse_arg_R> | <xparse_arg_u> | <xparse_arg_v>
+xparse_arg_m ::= "m"
+xparse_arg_l ::= "l"
+xparse_arg_r ::= "r" <token>, <token>
+xparse_arg_R ::= "R" <token> <token> "{" <LaTeX_code> "}"
+xparse_arg_u ::= "u" "{" <LaTeX_code> "}"
+xparse_arg_v ::= "v"
+
+xparse_optional_arg ::=  <xparse_arg_o> | <xparse_arg_d> | <xparse_arg_O> | <xparse_arg_D> | <xparse_arg_s> | <xparse_arg_t> | <xparse_arg_g> | <xparse_arg_G> | <xparse_arg_k> | <xparse_arg_K>
+xparse_arg_o ::= "o"
+xparse_arg_d ::= "d" <token> <token>
+xparse_arg_O ::= "O" "{" <LaTeX_code> "}"
+xparse_arg_D ::= "d" <token> <token> "{" <LaTeX_code> "}"
+xparse_arg_s ::= "s"
+xparse_arg_t ::= "t" <token>
+xparse_arg_g ::= "g"
+xparse_arg_G ::= "G" "{" <LaTeX_code> "}"
+xparse_arg_k ::= "k"
+xparse_arg_K ::= "K" "{" <LaTeX_code> "}"

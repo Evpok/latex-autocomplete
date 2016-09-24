@@ -22,7 +22,7 @@ I will add environments to this.
     Sleep 1000
     Send, {Down}{End}{Enter}{Enter}
 
-    SenRaw, If you write your own macros,
+    SendRaw, If you write your own macros,
     Sleep, 500,
     SendRaw, \spa
     Sleep, 500

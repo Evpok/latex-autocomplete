@@ -1,3 +1,6 @@
+## 1.0.0 (2016-09-24
+  - Updated README
+  - Mostly symbolic graduation, since the number of users is becoming significant. Huzzah and champagne !
 ## 0.6.0 (2016-09-19)
   - Add autocompletion for user-defined macros. Only support `\newcommand` and `\newcommand*`. Support for `xparse` to be added later.
 

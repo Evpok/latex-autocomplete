@@ -12,7 +12,8 @@ Development happens at https://github.com/Evpok/latex-autocomplete.
 ## Features
   - Automatically closes environments in a sensible manner
   - Provides autocompletion through [`autocomplete-plus`](https://atom.io/packages/autocomplete-plus)
-    - Currently only for `\label`s
+    - For user macros defined with `\newcommand`
+    - For `\labels`
 
 ## License
 WTFPL. See [LICENSE.md](https://cdn.rawgit.com/Evpok/latex-autocomplete/master/LICENSE.md)

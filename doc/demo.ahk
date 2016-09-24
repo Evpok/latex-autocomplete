@@ -22,6 +22,18 @@ I will add environments to this.
     Sleep 1000
     Send, {Down}{End}{Enter}{Enter}
 
+    SenRaw, If you write your own macros,
+    Sleep, 500,
+    SendRaw, \spa
+    Sleep, 500
+    Send, {Tab}
+    SendRaw, 27,
+    Send, {Tab}
+    SendRaw, 13,
+    Send, {End}{Space}
+    SendRaw, I will complete them!
+    Sleep 1000
+
     SendRaw, Sometimes you want to refer to things.
     Sleep, 500
     Send, {Enter}

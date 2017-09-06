@@ -5,7 +5,7 @@
 
 LaTeX autocompletion for [atom](http://atom.io).
 
-Development happens at https://github.com/Evpok/latex-autocomplete.
+Development happens at https://github.com/Evpok/latex-autocomplete. I don't have much time to invest in this beyond bug fixing, so any contribution, and particularly [enhancements](https://github.com/Evpok/latex-autocomplete/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement), is welcome.
 
 ![Screenshot](https://cdn.rawgit.com/Evpok/latex-autocomplete/master/doc/shot.gif)
 

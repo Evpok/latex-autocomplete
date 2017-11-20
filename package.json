@@ -1,7 +1,7 @@
 {
   "name": "latex-autocomplete",
   "main": "./lib/latexautocomplete.js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Autocompletion for LaTeX.",
   "keywords": [
     "LaTeX",

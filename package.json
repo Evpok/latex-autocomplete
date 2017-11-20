@@ -7,7 +7,10 @@
     "LaTeX",
     "autocompletion"
   ],
-  "repository": "https://github.com/evpok/latex-autocomplete",
+  "repository": {
+      "type": "git",
+      "url": "git+ssh://git@github.com/evpok/latex-autocomplete"
+  },
   "license": "wtfpl",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"

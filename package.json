@@ -1,15 +1,15 @@
 {
   "name": "latex-autocomplete",
   "main": "./lib/latexautocomplete.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Autocompletion for LaTeX.",
   "keywords": [
     "LaTeX",
     "autocompletion"
   ],
   "repository": {
-      "type": "git",
-      "url": "git+ssh://git@github.com/evpok/latex-autocomplete"
+    "type": "git",
+    "url": "git+ssh://git@github.com/evpok/latex-autocomplete"
   },
   "license": "wtfpl",
   "engines": {

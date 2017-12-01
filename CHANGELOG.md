@@ -9,6 +9,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## Added
   - Support for other grammar providers besides `[language-latex](https://github.com/area/language-latex)` (thanks [Aerijo](https://github.com/Evpok/latex-autocomplete/pull/26))
 
+## Fixed
+  - Macro completion failure on fileless editors ([issue #27](https://github.com/Evpok/latex-autocomplete/issues/27))
+
+## Changed
+  - Macro autocompletion is now asynchrone
+
 ## [1.0.2] - 2017-11-20
 [1.0.2]: https://github.com/Evpok/latex-autocomplete/compare/v1.0.1...v1.0.2
 ### Fixed

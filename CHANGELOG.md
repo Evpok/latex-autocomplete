@@ -6,6 +6,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 [Semantic Versioning](http://semver.org/).
 
 ## Unreleased
+
+## [1.1.0] - 2017-12-04
+[1.1.0]: https://github.com/Evpok/latex-autocomplete/compare/v1.0.2...v1.1.0
 ## Added
   - Support for other grammar providers besides `[language-latex](https://github.com/area/language-latex)` (thanks [Aerijo](https://github.com/Evpok/latex-autocomplete/pull/26))
 

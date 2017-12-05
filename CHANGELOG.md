@@ -9,6 +9,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## Changed
   - Environment closing is now an atomic operation (ie fully undone by a single undo)
 
+## Fixed
+  - Restore support for external macro files
+
 ## [1.1.0] - 2017-12-04
 [1.1.0]: https://github.com/Evpok/latex-autocomplete/compare/v1.0.2...v1.1.0
 ## Added

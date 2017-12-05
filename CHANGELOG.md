@@ -9,21 +9,21 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## [1.1.1] - 2017-12-05
 [1.1.1]: https://github.com/Evpok/latex-autocomplete/compare/v1.1.0...v1.1.1
-## Changed
+### Changed
   - Environment closing is now an atomic operation (ie fully undone by a single undo)
 
-## Fixed
+### Fixed
   - Restore support for external macro files
 
 ## [1.1.0] - 2017-12-04
 [1.1.0]: https://github.com/Evpok/latex-autocomplete/compare/v1.0.2...v1.1.0
-## Added
+### Added
   - Support for other grammar providers besides `[language-latex](https://github.com/area/language-latex)` (thanks [Aerijo](https://github.com/Evpok/latex-autocomplete/pull/26))
 
-## Fixed
+### Fixed
   - Macro completion failure on fileless editors ([issue #27](https://github.com/Evpok/latex-autocomplete/issues/27))
 
-## Changed
+### Changed
   - Macro autocompletion is now asynchrone
 
 ## [1.0.2] - 2017-11-20

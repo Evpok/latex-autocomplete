@@ -4,7 +4,7 @@ declaration_command = "\\DeclareDocumentCommand" | "\\NewDocumentCommand" | "\\R
 
 command_name ::= "\\" /[a-Z]+/
 
-LaTeX_code ::= <LaTeX_code> <LaTeX_code> | "{" <LaTeX_code> "}" | <LaTeX_comment> | <macro_call> | <escaped_token> | <parbreak> | /[^\{}]
+LaTeX_code ::= <LaTeX_code> <LaTeX_code> | "{" <LaTeX_code> "}" | <LaTeX_comment> | <macro_call> | <escaped_token> | <parbreak> | /[^\{}]/
 LaTeX_comment := "%" /[^\n]*\n/
 macro_call ::= "\\" /[a-Z]+/
 escaped_token ::= "\\" /[^\\]/

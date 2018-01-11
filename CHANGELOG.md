@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 [Semantic Versioning](http://semver.org/).
 
 ## Unreleased
+### Changed
+  - Switch to [Autocomplete+ Provider API 4.0](https://github.com/atom/autocomplete-plus/pull/940)
 
 ## [1.1.1] - 2017-12-05
 [1.1.1]: https://github.com/Evpok/latex-autocomplete/compare/v1.1.0...v1.1.1

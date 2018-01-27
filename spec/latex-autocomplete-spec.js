@@ -121,5 +121,52 @@ describe("latex autocomplete", () => {
                 expect(snippet).toEqual(`\\\\spam[\${1:#1 (default: 'Camelot')}]{\${2:#2}}`)
             })
         })
+        // Unit test for suggestions coming from external macro file
+        describe('macro magic file', () => {
+            it('loads macros from magic file', () => {
+              // Auxiliary flag to wait until the asynchronous call to get
+              // suggestions finishes
+              let flag = false
+
+                runs(() => {
+                      // Path to test.tex
+                      const test_file = path.join('test.tex')
+
+                      // Open a new editor with the previous file
+                      atom.workspace.open(test_file)
+                      .then((editor) => {
+                        // Input prefix for the test
+                        const input_prefix = '\\te'
+
+                        // Move cursor to the end of the file
+                        editor.moveToEndOfLine()
+
+                        // Insert the prefix in the editor in a new line
+                        editor.insertText('\n' + input_prefix)
+
+                        // Trigger suggestions
+                        macrocompleter.provider.getSuggestions({
+                            editor: editor,
+                            bufferPosition: editor.getCursorBufferPosition(),
+                            prefix: input_prefix
+                        })
+                        .then( result => {
+                            // Check that the suggestion is correct
+                            expect(result).toEqual([{
+                                snippet: '\\\\test',
+                                replacementPrefix: input_prefix
+                            }])
+                            // Ok to finish after the assertion has been checked
+                            flag = true
+                        })
+                    })
+                    // Wait for getSuggestions to finish the test
+                    waitsFor(() => {
+                        return flag
+                    })
+                })
+            })
+        })
     })
+
 })
